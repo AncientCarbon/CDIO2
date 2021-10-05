@@ -1,3 +1,7 @@
+/**
+ * javas Math klasse bruges til at vælge et tilfældigt tal mellem 1 og _sides
+ */
+
 public class Die {
     int sides; //starter med værdien 0
 
