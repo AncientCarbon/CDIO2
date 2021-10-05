@@ -1,5 +1,5 @@
 import java.util.*;
-public class CDIO2 {
+public class FeltSpil {
     public static void main(String[] args) {
 
     }
