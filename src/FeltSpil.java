@@ -1,4 +1,4 @@
-// Version 0.0.7
+// Version 0.0.8
 
 import java.util.*;
 public class FeltSpil {
@@ -40,47 +40,47 @@ public class FeltSpil {
             faceTotal = terning1.roll() + terning2.roll();
 
             if (faceTotal == F2.felt){
-                player1.balance += F2.point;
+                player1.addScore(F2);
                 System.out.println("Du er landet på " + F2.name + ", og du har fået " + F2.point + " point.");
             }
             else if (faceTotal == F3.felt){
-                player1.balance += F3.point;
+                player1.addScore(F3);
                 System.out.println("Du er landet på " + F3.name + ", og du har fået " + F3.point + " point.");
             }
             else if (faceTotal == F4.felt){
-                player1.balance += F4.point;
+                player1.addScore(F4);
                 System.out.println("Du er landet på " + F4.name + ", og du har fået " + F4.point + " point.");
             }
             else if (faceTotal == F5.felt){
-                player1.balance += F5.point;
+                player1.addScore(F5);
                 System.out.println("Du er landet på " + F5.name + ", og du har fået " + F5.point + " point.");
             }
             else if (faceTotal == F6.felt){
-                player1.balance += F6.point;
+                player1.addScore(F6);
                 System.out.println("Du er landet på " + F6.name + ", og du har fået " + F6.point + " point.");
             }
             else if (faceTotal == F7.felt){
-                player1.balance += F7.point;
+                player1.addScore(F7);
                 System.out.println("Du er landet på " + F7.name + ", og du har fået " + F7.point + " point.");
             }
             else if (faceTotal == F8.felt){
-                player1.balance += F8.point;
+                player1.addScore(F8);
                 System.out.println("Du er landet på " + F8.name + ", og du har fået " + F8.point + " point.");
             }
             else if (faceTotal == F9.felt){
-                player1.balance += F9.point;
+                player1.addScore(F9);
                 System.out.println("Du er landet på " + F9.name + ", og du har fået " + F9.point + " point.");
             }
             else if (faceTotal == F10.felt){
-                player1.balance += F10.point;
+                player1.addScore(F10);
                 System.out.println("Du er landet på " + F10.name + ", og du har fået " + F10.point + " point.");
             }
             else if (faceTotal == F11.felt){
-                player1.balance += F11.point;
+                player1.addScore(F11);
                 System.out.println("Du er landet på " + F11.name + ", og du har fået " + F11.point + " point.");
             }
             else if (faceTotal == F12.felt){
-                player1.balance += F12.point;
+                player1.addScore(F12);
                 System.out.println("Du er landet på " + F12.name + ", og du har fået " + F12.point + " point.");
             }
             else {
