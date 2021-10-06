@@ -1,19 +1,26 @@
-// Version 0.0.5
+// Version 0.0.6
 
 import java.util.*;
 public class FeltSpil {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Die terning1 = new Die(1,6);
-        Die terning2 = new Die(1, 6);
+        System.out.println("Indtast terning 1's MIN og MAX værdier " +
+                "(separer værdierne med et mellemrum eller et linjeskift)");
+        Die terning1 = new Die(in.nextInt(), in.nextInt());
+        System.out.println("Indtast terning 2's MIN og MAX værdier " +
+                "(separer værdierne med et mellemrum eller et linjeskift)");
+        Die terning2 = new Die(in.nextInt(), in.nextInt());
         System.out.println(terning1.roll());
         System.out.println(terning2.roll());
 
+        Scanner input = new Scanner(System.in);
         System.out.print("Player 1 skriv dit navn: ");
-        Player player1 = new Player(in.nextLine());
+        String name1 = input.nextLine();
+        Player player1 = new Player(name1);
         System.out.print("Player 2 skriv dit navn: ");
-        Player player2 = new Player(in.nextLine());
+        String name2 = input.nextLine();
+        Player player2 = new Player(name2);
 
         System.out.println("De to spillere hedder " + player1.name + " og " + player2.name);
 
@@ -29,6 +36,8 @@ public class FeltSpil {
         Felt F10 = new Felt ("The Werewall", -80); // The Werewall (Werewolf-Wall)
         Felt F11 = new Felt ("The Pit", -50); // The Pit
         Felt F12 = new Felt ("The Goldmine", 650); // The Goldmine
+
+
 
     }
 }
