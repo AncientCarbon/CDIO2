@@ -1,43 +1,91 @@
-// Version 0.0.6
+// Version 0.0.7
 
 import java.util.*;
 public class FeltSpil {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Indtast terning 1's MIN og MAX værdier " +
-                "(separer værdierne med et mellemrum eller et linjeskift)");
-        Die terning1 = new Die(in.nextInt(), in.nextInt());
-        System.out.println("Indtast terning 2's MIN og MAX værdier " +
-                "(separer værdierne med et mellemrum eller et linjeskift)");
-        Die terning2 = new Die(in.nextInt(), in.nextInt());
-        System.out.println(terning1.roll());
-        System.out.println(terning2.roll());
+        Die terning1 = new Die(1,6);
+        Die terning2 = new Die(1, 6);
 
-        Scanner input = new Scanner(System.in);
         System.out.print("Player 1 skriv dit navn: ");
-        String name1 = input.nextLine();
-        Player player1 = new Player(name1);
+        Player player1 = new Player(in.nextLine());
         System.out.print("Player 2 skriv dit navn: ");
-        String name2 = input.nextLine();
-        Player player2 = new Player(name2);
+        Player player2 = new Player(in.nextLine());
 
-        System.out.println("De to spillere hedder " + player1.name + " og " + player2.name);
+        player1.balance = 1000;
+        player2.balance = 1000;
+
+        int faceTotal;
+
+        Felt F2 = new Felt ("Tower", 250, 2); // Tower
+        Felt F3 = new Felt ("Crater", -100, 3); // Crater
+        Felt F4 = new Felt ("Palace Gates", 100, 4); // Palace Gates
+        Felt F5 = new Felt ("Cold Dessert", -20, 5); // Cold Dessert
+        Felt F6 = new Felt ("Walled City", 180, 6); // Walled City
+        Felt F7 = new Felt ("Monastery", 0, 7); // Monastery
+        Felt F8 = new Felt ("Black Cave", -70, 8); // Black Cave
+        Felt F9 = new Felt ("Huts in the Mountain", 60, 9); // Huts in the Mountain
+        Felt F10 = new Felt ("The Werewall", -80, 10); // The Werewall (Werewolf-Wall)
+        Felt F11 = new Felt ("The Pit", -50, 11); // The Pit
+        Felt F12 = new Felt ("The Goldmine", 650, 12); // The Goldmine
 
 
-        Felt F2 = new Felt ("Tower", 250); // Tower
-        Felt F3 = new Felt ("Crater", -100); // Crater
-        Felt F4 = new Felt ("Palace Gates", 100); // Palace Gates
-        Felt F5 = new Felt ("Cold Dessert", -20); // Cold Dessert
-        Felt F6 = new Felt ("Walled City", 180); // Walled City
-        Felt F7 = new Felt ("Monastery", 0); // Monastery
-        Felt F8 = new Felt ("Black Cave", -70); // Black Cave
-        Felt F9 = new Felt ("Huts in the Mountain", 60); // Huts in the Mountain
-        Felt F10 = new Felt ("The Werewall", -80); // The Werewall (Werewolf-Wall)
-        Felt F11 = new Felt ("The Pit", -50); // The Pit
-        Felt F12 = new Felt ("The Goldmine", 650); // The Goldmine
+        while (player1.balance < 3000 && player2.balance < 3000){
 
+            System.out.print("Tryk 'enter' for at rulle med terningerne:");
+            new Scanner(System.in).nextLine();
 
+            faceTotal = terning1.roll() + terning2.roll();
 
+            if (faceTotal == F2.felt){
+                player1.balance += F2.point;
+                System.out.println("Du er landet på " + F2.name + ", og du har fået " + F2.point + " point.");
+            }
+            else if (faceTotal == F3.felt){
+                player1.balance += F3.point;
+                System.out.println("Du er landet på " + F3.name + ", og du har fået " + F3.point + " point.");
+            }
+            else if (faceTotal == F4.felt){
+                player1.balance += F4.point;
+                System.out.println("Du er landet på " + F4.name + ", og du har fået " + F4.point + " point.");
+            }
+            else if (faceTotal == F5.felt){
+                player1.balance += F5.point;
+                System.out.println("Du er landet på " + F5.name + ", og du har fået " + F5.point + " point.");
+            }
+            else if (faceTotal == F6.felt){
+                player1.balance += F6.point;
+                System.out.println("Du er landet på " + F6.name + ", og du har fået " + F6.point + " point.");
+            }
+            else if (faceTotal == F7.felt){
+                player1.balance += F7.point;
+                System.out.println("Du er landet på " + F7.name + ", og du har fået " + F7.point + " point.");
+            }
+            else if (faceTotal == F8.felt){
+                player1.balance += F8.point;
+                System.out.println("Du er landet på " + F8.name + ", og du har fået " + F8.point + " point.");
+            }
+            else if (faceTotal == F9.felt){
+                player1.balance += F9.point;
+                System.out.println("Du er landet på " + F9.name + ", og du har fået " + F9.point + " point.");
+            }
+            else if (faceTotal == F10.felt){
+                player1.balance += F10.point;
+                System.out.println("Du er landet på " + F10.name + ", og du har fået " + F10.point + " point.");
+            }
+            else if (faceTotal == F11.felt){
+                player1.balance += F11.point;
+                System.out.println("Du er landet på " + F11.name + ", og du har fået " + F11.point + " point.");
+            }
+            else if (faceTotal == F12.felt){
+                player1.balance += F12.point;
+                System.out.println("Du er landet på " + F12.name + ", og du har fået " + F12.point + " point.");
+            }
+            else {
+                System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
+            }
+            System.out.println(player1.name + "'s nye score er: " + player1.balance);
+        }
     }
 }
