@@ -5,8 +5,12 @@ public class FeltSpil {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Die terning1 = new Die(6);
-        Die terning2 = new Die(6);
+        Die terning1 = new Die(1,1);
+        Die terning2 = new Die(6, 6);
+        terning1.roll();
+        terning2.roll();
+        System.out.println(terning1);
+        System.out.println(terning2);
 
         Player player1 = new Player(in.nextLine());
         Player player2 = new Player(in.nextLine());
