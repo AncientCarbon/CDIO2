@@ -1,4 +1,4 @@
-// Version 0.0.4
+// Version 0.0.5
 
 import java.util.*;
 public class FeltSpil {
@@ -29,6 +29,6 @@ public class FeltSpil {
         Felt F10 = new Felt ("The Werewall", -80); // The Werewall (Werewolf-Wall)
         Felt F11 = new Felt ("The Pit", -50); // The Pit
         Felt F12 = new Felt ("The Goldmine", 650); // The Goldmine
-        
+
     }
 }
