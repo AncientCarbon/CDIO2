@@ -1,91 +1,95 @@
 // Version 0.0.8
 
 import java.util.*;
+
 public class FeltSpil {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        Die terning1 = new Die(1,6);
+        Die terning1 = new Die(1, 6);
         Die terning2 = new Die(1, 6);
 
+        System.out.println("""
+                Begge spillere starter med en pengebeholdning på 1000kr.\s
+                Slå med terningerne for at lande på et givent felt, med en given værdi, som både kan være positiv eller negativ.\s
+                Spilleren der når en pengebeholdning på 3000kr vinder"""); // Text block (forslået af java). \s = linjeskift
         System.out.print("Player 1 skriv dit navn: ");
         Player player1 = new Player(in.nextLine());
         System.out.print("Player 2 skriv dit navn: ");
         Player player2 = new Player(in.nextLine());
 
-        player1.balance = 1000;
-        player2.balance = 1000;
-
         int faceTotal;
 
-        Felt F2 = new Felt ("Tower", 250, 2); // Tower
-        Felt F3 = new Felt ("Crater", -100, 3); // Crater
-        Felt F4 = new Felt ("Palace Gates", 100, 4); // Palace Gates
-        Felt F5 = new Felt ("Cold Dessert", -20, 5); // Cold Dessert
-        Felt F6 = new Felt ("Walled City", 180, 6); // Walled City
-        Felt F7 = new Felt ("Monastery", 0, 7); // Monastery
-        Felt F8 = new Felt ("Black Cave", -70, 8); // Black Cave
-        Felt F9 = new Felt ("Huts in the Mountain", 60, 9); // Huts in the Mountain
-        Felt F10 = new Felt ("The Werewall", -80, 10); // The Werewall (Werewolf-Wall)
-        Felt F11 = new Felt ("The Pit", -50, 11); // The Pit
-        Felt F12 = new Felt ("The Goldmine", 650, 12); // The Goldmine
+        Felt F2 = new Felt("Tower", 250, 2); // Tower
+        Felt F3 = new Felt("Crater", -100, 3); // Crater
+        Felt F4 = new Felt("Palace Gates", 100, 4); // Palace Gates
+        Felt F5 = new Felt("Cold Dessert", -20, 5); // Cold Dessert
+        Felt F6 = new Felt("Walled City", 180, 6); // Walled City
+        Felt F7 = new Felt("Monastery", 0, 7); // Monastery
+        Felt F8 = new Felt("Black Cave", -70, 8); // Black Cave
+        Felt F9 = new Felt("Huts in the Mountain", 60, 9); // Huts in the Mountain
+        Felt F10 = new Felt("The Werewall", -80, 10); // The Werewall (Werewolf-Wall)
+        Felt F11 = new Felt("The Pit", -50, 11); // The Pit
+        Felt F12 = new Felt("The Goldmine", 650, 12); // The Goldmine
 
+        HashMap<Integer, Felt> fieldMap = new HashMap<>();
+        // Laver et HashMap. HashMap-navnet er fieldMap
+        // HashMap Key skal en int og værdien skal være et felt-objekt som er dannet herover
+        fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2
+        // Indsætter værdier i Map. Metoden put() indsætter elementer i Map
+        fieldMap.put(3, F3);
+        fieldMap.put(4, F4);
+        fieldMap.put(5, F5);
+        fieldMap.put(6, F6);
+        fieldMap.put(7, F7);
+        fieldMap.put(8, F8);
+        fieldMap.put(9, F9);
+        fieldMap.put(10, F10);
+        fieldMap.put(11, F11);
+        fieldMap.put(12, F12);
 
-        while (player1.balance < 3000 && player2.balance < 3000){
+        Player activePlayer = player1; // Variablen activePlayer har typen Player. Ligesom et navn har typen String...
+        while (activePlayer.balance < 3000) {
 
-            System.out.print("Tryk 'enter' for at rulle med terningerne:");
+            System.out.print("Tryk 'enter' for at rulle med terningerne: Det er " + activePlayer.name + "'s tur");
             new Scanner(System.in).nextLine();
 
             faceTotal = terning1.roll() + terning2.roll();
 
-            if (faceTotal == F2.felt){
-                player1.addScore(F2);
-                System.out.println("Du er landet på " + F2.name + ", og du har fået " + F2.point + " point.");
-            }
-            else if (faceTotal == F3.felt){
-                player1.addScore(F3);
-                System.out.println("Du er landet på " + F3.name + ", og du har fået " + F3.point + " point.");
-            }
-            else if (faceTotal == F4.felt){
-                player1.addScore(F4);
-                System.out.println("Du er landet på " + F4.name + ", og du har fået " + F4.point + " point.");
-            }
-            else if (faceTotal == F5.felt){
-                player1.addScore(F5);
-                System.out.println("Du er landet på " + F5.name + ", og du har fået " + F5.point + " point.");
-            }
-            else if (faceTotal == F6.felt){
-                player1.addScore(F6);
-                System.out.println("Du er landet på " + F6.name + ", og du har fået " + F6.point + " point.");
-            }
-            else if (faceTotal == F7.felt){
-                player1.addScore(F7);
-                System.out.println("Du er landet på " + F7.name + ", og du har fået " + F7.point + " point.");
-            }
-            else if (faceTotal == F8.felt){
-                player1.addScore(F8);
-                System.out.println("Du er landet på " + F8.name + ", og du har fået " + F8.point + " point.");
-            }
-            else if (faceTotal == F9.felt){
-                player1.addScore(F9);
-                System.out.println("Du er landet på " + F9.name + ", og du har fået " + F9.point + " point.");
-            }
-            else if (faceTotal == F10.felt){
-                player1.addScore(F10);
-                System.out.println("Du er landet på " + F10.name + ", og du har fået " + F10.point + " point.");
-            }
-            else if (faceTotal == F11.felt){
-                player1.addScore(F11);
-                System.out.println("Du er landet på " + F11.name + ", og du har fået " + F11.point + " point.");
-            }
-            else if (faceTotal == F12.felt){
-                player1.addScore(F12);
-                System.out.println("Du er landet på " + F12.name + ", og du har fået " + F12.point + " point.");
-            }
-            else {
+            if (faceTotal < 2 || faceTotal > 12) {
                 System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
+            } else {
+                Felt field = fieldMap.get(faceTotal); // By variabel field som har typen Felt tilføjes
+                activePlayer.addScore(field);
+                // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
+                // vha. metoden addScore som er defineret i Player klassen
+                System.out.println("\nDu er landet på " + field.name + ", og du har fået " + field.point + " point.");
             }
-            System.out.println(player1.name + "'s nye score er: " + player1.balance);
+            System.out.println(activePlayer.name + "'s nye score er: " + activePlayer.balance);
+
+            if (activePlayer == player1) {
+                activePlayer = player2; // Hvis activePlayer er player1, skift den aktive spiller til at være player2
+                if (player1.balance >= 3000) {
+                    System.out.println(player1.name + " har vundet med en score på " + player1.balance + " point.");
+                    System.out.println(player2.name + " har tabt med en score på " + player2.balance + " point.");
+                    System.exit(0);
+                }
+                else if (faceTotal == 10){
+                    System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
+                    activePlayer = player1;
+                }
+            } else {
+                activePlayer = player1; // Hvis activePlayer er player2, skift den aktive spiller til at være player1
+                if (player2.balance >= 3000) {
+                    System.out.println(player2.name + " har vundet med en score på " + player2.balance + " point.");
+                    System.out.println(player1.name + " har tabt med en score på " + player1.balance + " point.");
+                    System.exit(1);
+                }
+                else if (faceTotal == 10){
+                    System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
+                    activePlayer = player2;
+                }
+            }
         }
     }
 }

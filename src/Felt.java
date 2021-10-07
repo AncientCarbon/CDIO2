@@ -8,5 +8,4 @@ public class Felt {
         this.point = _point;
         this.felt = _felt;
     }
-
 }
