@@ -7,7 +7,7 @@ public class Player {
         this.balance = 1000;
     }
 
-    public int addScore(Felt felt){
+    public int addScore(Field felt){ // Laver et ny variabel med typen Felt
         this.balance += felt.point;
         return this.balance;
     }

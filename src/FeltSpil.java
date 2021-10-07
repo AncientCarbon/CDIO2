@@ -1,4 +1,4 @@
-// Version 0.1.0
+// Version 0.1.1
 
 import java.util.*;
 
@@ -19,24 +19,33 @@ public class FeltSpil {
         System.out.print("Player 2 skriv dit navn: ");
         Player player2 = new Player(in.nextLine());
 
-        int faceTotal;
+        Field F2 = new Field("Tower", 250);
+            F2.description = "describe this field";
+        Field F3 = new Field("Crater", -100);
+            F3.description = "describe this field";
+        Field F4 = new Field("Palace Gates", 100);
+            F4.description = "describe this field";
+        Field F5 = new Field("Cold Dessert", -20);
+            F5.description = "describe this field";
+        Field F6 = new Field("Walled City", 180);
+            F6.description = "describe this field";
+        Field F7 = new Field("Monastery", 0);
+            F7.description = "describe this field";
+        Field F8 = new Field("Black Cave", -70);
+            F8.description = "describe this field";
+        Field F9 = new Field("Huts in the Mountain", 60);
+            F9.description = "describe this field";
+        Field F10 = new Field("The Werewall", -80); // (Werewolf-Wall)
+            F10.description = "describe this field";
+        Field F11 = new Field("The Pit", -50);
+            F11.description = "describe this field";
+        Field F12 = new Field("The Goldmine", 650);
+            F12.description = "Du har fundet guld i bjergene og sælger det for 650, du er rig!";
 
-        Felt F2 = new Felt("Tower", 250, 2); // Tower
-        Felt F3 = new Felt("Crater", -100, 3); // Crater
-        Felt F4 = new Felt("Palace Gates", 100, 4); // Palace Gates
-        Felt F5 = new Felt("Cold Dessert", -20, 5); // Cold Dessert
-        Felt F6 = new Felt("Walled City", 180, 6); // Walled City
-        Felt F7 = new Felt("Monastery", 0, 7); // Monastery
-        Felt F8 = new Felt("Black Cave", -70, 8); // Black Cave
-        Felt F9 = new Felt("Huts in the Mountain", 60, 9); // Huts in the Mountain
-        Felt F10 = new Felt("The Werewall", -80, 10); // The Werewall (Werewolf-Wall)
-        Felt F11 = new Felt("The Pit", -50, 11); // The Pit
-        Felt F12 = new Felt("The Goldmine", 650, 12); // The Goldmine
-
-        HashMap<Integer, Felt> fieldMap = new HashMap<>();
+        HashMap<Integer, Field> fieldMap = new HashMap<>();
         // Laver et HashMap. HashMap-navnet er fieldMap
         // HashMap Key skal en int og værdien skal være et felt-objekt som er dannet herover
-        fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2
+        fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2S
         // Indsætter værdier i Map. Metoden put() indsætter elementer i Map
         fieldMap.put(3, F3);
         fieldMap.put(4, F4);
@@ -49,6 +58,8 @@ public class FeltSpil {
         fieldMap.put(11, F11);
         fieldMap.put(12, F12);
 
+        int faceTotal;
+
         Player activePlayer = player1; // Variablen activePlayer har typen Player. Ligesom et navn har typen String...
         while (activePlayer.balance < 3000) {
 
@@ -60,10 +71,11 @@ public class FeltSpil {
             if (faceTotal < 2 || faceTotal > 12) {
                 System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
             } else {
-                Felt field = fieldMap.get(faceTotal); // By variabel field som har typen Felt tilføjes
+                Field field = fieldMap.get(faceTotal); // Ny variabel field som har typen Felt tilføjes
                 activePlayer.addScore(field);
                 // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
                 // vha. metoden addScore som er defineret i Player klassen
+                System.out.println(field.description);
                 System.out.println("\nDu er landet på " + field.name + ", og du har fået " + field.point + " point.");
             }
             System.out.println(activePlayer.name + "'s nye score er: " + activePlayer.balance);
