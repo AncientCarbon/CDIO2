@@ -10,9 +10,10 @@ public class FeltSpil {
         Die terning2 = new Die(1, 6);
 
         System.out.println("""
-                Begge spillere starter med en pengebeholdning på 1000kr.\s
-                Slå med terningerne for at lande på et givent felt, med en given værdi, som både kan være positiv eller negativ.\s
-                Spilleren der når en pengebeholdning på 3000kr vinder"""); // Text block (forslået af java). \s = linjeskift
+                Begge spillere starter med en pengebeholdning på 1000kr.
+                Slå med terningerne for at lande på et givent felt, med en given værdi, som både kan være positiv eller negativ.
+                Spilleren der når en pengebeholdning på 3000kr vinder
+                """); // Text block (forslået af java)
         System.out.print("Player 1 skriv dit navn: ");
         Player player1 = new Player(in.nextLine());
         System.out.print("Player 2 skriv dit navn: ");
