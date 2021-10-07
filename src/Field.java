@@ -3,9 +3,9 @@ public class Field {
     public String name;
     public String description;
 
-    public Field(String _name, int _point){
+    public Field(String _name, int _point, String _description){
         this.name = _name;
         this.point = _point;
-        this.description = "Dette er felt beskrivelse";
+        this.description = _description;
     }
 }
