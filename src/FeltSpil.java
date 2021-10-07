@@ -20,27 +20,27 @@ public class FeltSpil {
         Player player2 = new Player(in.nextLine());
 
         Field F2 = new Field("Tower", 250);
-            F2.description = "describe this field";
+        F2.description = "describe this field";
         Field F3 = new Field("Crater", -100);
-            F3.description = "describe this field";
+        F3.description = "describe this field";
         Field F4 = new Field("Palace Gates", 100);
-            F4.description = "describe this field";
+        F4.description = "describe this field";
         Field F5 = new Field("Cold Dessert", -20);
-            F5.description = "describe this field";
+        F5.description = "describe this field";
         Field F6 = new Field("Walled City", 180);
-            F6.description = "describe this field";
+        F6.description = "describe this field";
         Field F7 = new Field("Monastery", 0);
-            F7.description = "describe this field";
+        F7.description = "describe this field";
         Field F8 = new Field("Black Cave", -70);
-            F8.description = "describe this field";
+        F8.description = "describe this field";
         Field F9 = new Field("Huts in the Mountain", 60);
-            F9.description = "describe this field";
+        F9.description = "describe this field";
         Field F10 = new Field("The Werewall", -80); // (Werewolf-Wall)
-            F10.description = "describe this field";
+        F10.description = "describe this field";
         Field F11 = new Field("The Pit", -50);
-            F11.description = "describe this field";
+        F11.description = "describe this field";
         Field F12 = new Field("The Goldmine", 650);
-            F12.description = "Du har fundet guld i bjergene og sælger det for 650, du er rig!";
+        F12.description = "Du har fundet guld i bjergene og sælger det for 650, du er rig!";
 
         HashMap<Integer, Field> fieldMap = new HashMap<>();
         // Laver et HashMap. HashMap-navnet er fieldMap
@@ -86,8 +86,7 @@ public class FeltSpil {
                     System.out.println(player1.name + " har vundet med en score på " + player1.balance + " point.");
                     System.out.println(player2.name + " har tabt med en score på " + player2.balance + " point.");
                     System.exit(0);
-                }
-                else if (faceTotal == 10){
+                } else if (faceTotal == 10) {
                     System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
                     activePlayer = player1;
                 }
@@ -97,8 +96,7 @@ public class FeltSpil {
                     System.out.println(player2.name + " har vundet med en score på " + player2.balance + " point.");
                     System.out.println(player1.name + " har tabt med en score på " + player1.balance + " point.");
                     System.exit(1);
-                }
-                else if (faceTotal == 10){
+                } else if (faceTotal == 10) {
                     System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
                     activePlayer = player2;
                 }
