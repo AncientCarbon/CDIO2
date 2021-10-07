@@ -8,5 +8,4 @@ public class Field {
         this.point = _point;
         this.description = "Dette er felt beskrivelse";
     }
-
 }
