@@ -19,17 +19,28 @@ public class FeltSpil {
         System.out.print("Player 2 skriv dit navn: ");
         Player player2 = new Player(in.nextLine());
 
-        Field F2 = new Field("Tower", 250, "describe this field");
-        Field F3 = new Field("Crater", -100, "describe this field");
-        Field F4 = new Field("Palace Gates", 100, "describe this field");
-        Field F5 = new Field("Cold Dessert", -20, "describe this field");
-        Field F6 = new Field("Walled City", 180, "describe this field");
-        Field F7 = new Field("Monastery", 0, "describe this field");
-        Field F8 = new Field("Black Cave", -70, "describe this field");
-        Field F9 = new Field("Huts in the Mountain", 60, "describe this field");
-        Field F10 = new Field("The Werewall", -80, "describe this field"); // (Werewolf-Wall)
-        Field F11 = new Field("The Pit", -50, "describe this field");
-        Field F12 = new Field("The Goldmine", 650, "Du har fundet guld i bjergene og sælger det for 650, du er rig!");
+        Field F2 = new Field("Tower", 250,
+                "describe this field");
+        Field F3 = new Field("Crater", -100,
+                "describe this field");
+        Field F4 = new Field("Palace Gates", 100,
+                "describe this field");
+        Field F5 = new Field("Cold Dessert", -20,
+                "describe this field");
+        Field F6 = new Field("Walled City", 180,
+                "describe this field");
+        Field F7 = new Field("Monastery", 0,
+                "describe this field");
+        Field F8 = new Field("Black Cave", -70,
+                "describe this field");
+        Field F9 = new Field("Huts in the Mountain", 60,
+                "describe this field");
+        Field F10 = new Field("The Werewall", -80,
+                "describe this field"); // (Werewolf-Wall)
+        Field F11 = new Field("The Pit", -50,
+                "describe this field");
+        Field F12 = new Field("The Goldmine", 650,
+                "Du har fundet guld i bjergene og sælger det for 650, du er rig!");
 
         HashMap<Integer, Field> fieldMap = new HashMap<>();
         // Laver et HashMap. HashMap-navnet er fieldMap
