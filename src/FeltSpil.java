@@ -21,27 +21,37 @@ public class FeltSpil {
         Player player2 = new Player(in.nextLine());
 
         Field F2 = new Field("Tower", 250,
-                "describe this field");
+                "Du bestiger et tårn, og finder i kisten 250 mønter. På vejen ned smadrer" +
+                        " du viceværten.");
         Field F3 = new Field("Crater", -100,
-                "describe this field");
+                "Du snubler 100 meter, og taber præcis 1 mønt pr meter");
         Field F4 = new Field("Palace Gates", 100,
-                "describe this field");
+                "Du finder en soldat ved porten til slottet, og stjæler alle hans penge." +
+                        " Han har ikke råd til at fodre hans børn nu");
         Field F5 = new Field("Cold Dessert", -20,
-                "describe this field");
+                "Du bliver kold i ørkenen, og beslutter dig for at betale 20 mønter til guderne" +
+                        " for lidt varme");
         Field F6 = new Field("Walled City", 180,
-                "describe this field");
+                "Du sidder og græder i et hjørne, og en rigmand har ondt af " +
+                        "dig og giver dig nogle mønter");
         Field F7 = new Field("Monastery", 0,
-                "describe this field");
+                "Du tager til templet og beder til guderne i stedet for at " +
+                        "være produktiv");
         Field F8 = new Field("Black Cave", -70,
-                "describe this field");
+                "Du tager ind i en mørk grotte. Den er mørk, så du betaler guderne " +
+                        "70 mønter for at finde ud igen");
         Field F9 = new Field("Huts in the Mountain", 60,
-                "describe this field");
+                "Du finder nogle små hytter i bjergene, og beslutter dig for at røve dem." +
+                        " De var ikke særligt rige");
         Field F10 = new Field("The Werewall", -80,
-                "describe this field"); // (Werewolf-Wall)
+                "Du finder et lille hegn. Pludselig bliver det fuldmåne, og hegnet vokser" +
+                        " sig til en mur. Du er så overrasket at du taber 80 mønter");
         Field F11 = new Field("The Pit", -50,
-                "describe this field");
+                "Du snubler i et lille hul en møgunge fra landsbyen gravede tidligere. Du " +
+                        "smækker ham, og han stjæler 50 mønter fra dig.");
         Field F12 = new Field("The Goldmine", 650,
-                "Du har fundet guld i bjergene og sælger det for 650, du er rig!");
+                "Du beslutter dig for at tage ud og mine i grotterne. Heldigvis finder du en miner " +
+                        "på vej hjem, så du tager hans rygsæk, og finder en masse guld.");
 
         HashMap<Integer, Field> fieldMap = new HashMap<>();
         // Laver et HashMap. HashMap-navnet er fieldMap
@@ -76,8 +86,8 @@ public class FeltSpil {
                 activePlayer.addScore(field);
                 // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
                 // vha. metoden addScore som er defineret i Player klassen
-                System.out.println(field.description);
-                System.out.println("\nDu er landet på " + field.name + ", og du har fået " + field.point + " point.");
+                System.out.println("\n" + field.description);
+                System.out.println("Du har fået " + field.point + " point.");
             }
             System.out.println(activePlayer.name + "'s nye score er: " + activePlayer.balance);
 
