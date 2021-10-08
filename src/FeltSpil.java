@@ -13,7 +13,7 @@ public class FeltSpil {
                 Begge spillere starter med en pengebeholdning på 1000kr.
                 Slå med terningerne for at lande på et givent felt, med en given værdi, 
                 som både kan være positiv eller negativ.
-                Spilleren der når en pengebeholdning på 3000kr vinder
+                Spilleren der først når en pengebeholdning på 3000kr vinder.
                 """); // Text block (forslået af java)
         System.out.print("Player 1 skriv dit navn: ");
         Player player1 = new Player(in.nextLine());
@@ -21,19 +21,24 @@ public class FeltSpil {
         Player player2 = new Player(in.nextLine());
 
         Field F2 = new Field("Tower", 250,
-                "Du bestiger et tårn, og finder i kisten 250 mønter. På vejen ned smadrer" +
-                        " du viceværten.");
+                "Du betaler 50 mønter for at komme op i runde tårn. Det var kedeligt," +
+                        " så du slår en mand, og han giver dig 300 mønter for at stoppe.");
         Field F3 = new Field("Crater", -100,
-                "Du snubler 100 meter, og taber præcis 1 mønt pr meter");
+                """
+                Du finder et meget flot krater, og beslutter dig for at tage et billede
+                af det. Desværre er kameraet ikke opfundet endnu, så du sætter dig ned og
+                græder. En lille dreng kommer hen og sparker til dig, og stjæler dine penge.""");
         Field F4 = new Field("Palace Gates", 100,
-                "Du finder en soldat ved porten til slottet, og stjæler alle hans penge." +
-                        " Han har ikke råd til at fodre hans børn nu");
+                "Du overtaler en soldat ved slottets port til at købe din mirakel-" +
+                        "eleksir. Den virker ikke, og han har ikke råd til at fodre sine børn nu.");
         Field F5 = new Field("Cold Dessert", -20,
-                "Du bliver kold i ørkenen, og beslutter dig for at betale 20 mønter til guderne" +
-                        " for lidt varme");
+                "Du kommer ud i Den Kolde Ørken™. Den er kold™, og du beslutter dig for at" +
+                        " købe en varm drik. Der er ingen butikker\ni Den Kolde Ørken™, så du smider" +
+                        "20 mønter på jorden i frustration");
         Field F6 = new Field("Walled City", 180,
-                "Du sidder og græder i et hjørne, og en rigmand har ondt af " +
-                        "dig og giver dig nogle mønter");
+                "Du planlægger en revolution i Walled City™, og får alle de normale borgere" +
+                        " til at donere alt hvad de ejer. Det er faktisk bare" +
+                        "et scam, så du løber med pengene.");
         Field F7 = new Field("Monastery", 0,
                 "Du tager til templet og beder til guderne i stedet for at " +
                         "være produktiv");
@@ -50,8 +55,9 @@ public class FeltSpil {
                 "Du snubler i et lille hul en møgunge fra landsbyen gravede tidligere. Du " +
                         "smækker ham, og han stjæler 50 mønter fra dig.");
         Field F12 = new Field("The Goldmine", 650,
-                "Du beslutter dig for at tage ud og mine i grotterne. Heldigvis finder du en miner " +
-                        "på vej hjem, så du tager hans rygsæk, og finder en masse guld.");
+                "Du beslutter at du ikke gider spille det her spil længere, så du " +
+                        "tager hjem. Dog finder du en ny spiller på vejen, og stjæler over " +
+                        "halvdelen af hans penge. Nu vil du gerne spille lidt mere.");
 
         HashMap<Integer, Field> fieldMap = new HashMap<>();
         // Laver et HashMap. HashMap-navnet er fieldMap
