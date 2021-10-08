@@ -1,4 +1,4 @@
-// Version 0.1.1
+// Version 0.1.2
 
 import java.util.*;
 
@@ -11,7 +11,8 @@ public class FeltSpil {
 
         System.out.println("""
                 Begge spillere starter med en pengebeholdning på 1000kr.
-                Slå med terningerne for at lande på et givent felt, med en given værdi, som både kan være positiv eller negativ.
+                Slå med terningerne for at lande på et givent felt, med en given værdi, 
+                som både kan være positiv eller negativ.
                 Spilleren der når en pengebeholdning på 3000kr vinder
                 """); // Text block (forslået af java)
         System.out.print("Player 1 skriv dit navn: ");
