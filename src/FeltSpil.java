@@ -11,7 +11,7 @@ public class FeltSpil {
 
         System.out.println("""
                 Begge spillere starter med en pengebeholdning på 1000kr.
-                Slå med terningerne for at lande på et givent felt, med en given værdi, 
+                Slå med terningerne for at lande på et givent felt, med en given værdi,
                 som både kan være positiv eller negativ.
                 Spilleren der først når en pengebeholdning på 3000kr vinder.
                 """); // Text block (forslået af java)
@@ -89,7 +89,7 @@ public class FeltSpil {
                 System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
             } else {
                 Field field = fieldMap.get(faceTotal); // Ny variabel field som har typen Felt tilføjes
-                activePlayer.addScore(field);
+                activePlayer.addScore(field.point);
                 // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
                 // vha. metoden addScore som er defineret i Player klassen
                 System.out.println("\n" + field.description);

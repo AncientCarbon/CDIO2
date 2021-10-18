@@ -1,7 +1,6 @@
 /**
  * javas Math klasse bruges til at vælge et tilfældigt tal mellem 1 og _sides
  */
-
 public class Die {
     int MINfaceValue; //starter med værdien 0
     int MAXfaceValue;
