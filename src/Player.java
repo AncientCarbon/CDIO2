@@ -1,7 +1,6 @@
 public class Player {
     private String name;
     private Konto konto;
-    private int balance;
 
     public Player(String name) {
         this.name = name;
@@ -9,10 +8,14 @@ public class Player {
     }
 
     public int addScore(int point){ // Laver et ny variabel med typen Felt
-        this.balance += point;
-        if (balance < 0)
-            balance = 0;
-        return this.balance;
+        int newBalance = this.konto.getBalance() + point;
+
+        if (newBalance < 0)
+            newBalance = 0;
+
+        this.konto.setBalance(newBalance);
+
+        return this.konto.getBalance();
     }
 
     public void setName(String name) {
