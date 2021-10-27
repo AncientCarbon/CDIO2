@@ -1,5 +1,6 @@
 /**
- * javas Math klasse bruges til at vælge et tilfældigt tal mellem 1 og _sides
+ * Terning initieres med Die(int, int) for at parametre for terningen.
+ * Der bruges .roll til at vælge et tilfældigt tal mellem disse parametre.
  */
 public class Die {
     int MINfaceValue; //starter med værdien 0

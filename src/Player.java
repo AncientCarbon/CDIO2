@@ -1,3 +1,8 @@
+/**
+ * Player bruges til at holde styr på hver enkelt spiller.
+ * Brug .addScore for at tilføje eller fjerne penge.
+ */
+
 public class Player {
     private String name;
     private Konto konto;
