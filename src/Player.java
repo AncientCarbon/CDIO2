@@ -18,6 +18,10 @@ public class Player {
         return this.konto.getBalance();
     }
 
+    public int getBalance() {
+        return this.konto.getBalance();
+    }
+
     public void setName(String name) {
         this.name = name;
     }
