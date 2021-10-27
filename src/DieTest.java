@@ -40,4 +40,9 @@ public class DieTest {
             assertFalse(rollRange);
         }
     }
+
+    @Test
+    public void balanceBelowZero(){
+
+    }
 }
