@@ -1,4 +1,4 @@
-// Version 1.1.0
+// Version 1.1.1
 
 import java.util.*;
 
@@ -31,7 +31,7 @@ public class FeltSpil {
                 græder. En lille dreng kommer hen og sparker til dig, og stjæler dine penge.""");
         Field F4 = new Field("Palace Gates", 100,
                 "Du overtaler en soldat ved slottets port til at købe din mirakel-" +
-                        "eleksir. Den virker ikke, og han har ikke råd til at fodre sine børn nu.");
+                        "eliksir. Den virker ikke, og han har ikke råd til at fodre sine børn nu.");
         Field F5 = new Field("Cold Dessert", -20,
                 "Du kommer ud i Den Kolde Ørken™. Den er kold™, og du beslutter dig for at" +
                         " købe en varm drik. Der er ingen butikker\ni Den Kolde Ørken™, så du smider" +
