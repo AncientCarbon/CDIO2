@@ -1,5 +1,5 @@
 public class Player {
-    public String name;
+    private String name;
     public int balance;
 
     public Player(String name){
@@ -11,4 +11,20 @@ public class Player {
         this.balance += point;
         return this.balance;
     }
+
+    public void setName(String name){
+        this.name=name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+
+
 }

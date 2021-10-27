@@ -3,6 +3,11 @@
 import java.util.*;
 
 public class FeltSpil {
+
+
+
+
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -80,7 +85,7 @@ public class FeltSpil {
         Player activePlayer = player1; // Variablen activePlayer har typen Player. Ligesom et navn har typen String...
         while (activePlayer.balance < 3000) {
 
-            System.out.print("Tryk 'enter' for at rulle med terningerne: Det er " + activePlayer.name + "'s tur");
+            System.out.print("Tryk 'enter' for at rulle med terningerne: Det er " + activePlayer.getName() + "'s tur");
             new Scanner(System.in).nextLine();
 
             faceTotal = terning1.roll() + terning2.roll();
@@ -95,13 +100,13 @@ public class FeltSpil {
                 System.out.println("\n" + field.description);
                 System.out.println("Du har fået " + field.point + " point.");
             }
-            System.out.println(activePlayer.name + "'s nye score er: " + activePlayer.balance);
+            System.out.println(activePlayer.getName() + "'s nye score er: " + activePlayer.balance);
 
             if (activePlayer == player1) {
                 activePlayer = player2; // Hvis activePlayer er player1, skift den aktive spiller til at være player2
                 if (player1.balance >= 3000) {
-                    System.out.println(player1.name + " har vundet med en score på " + player1.balance + " point.");
-                    System.out.println(player2.name + " har tabt med en score på " + player2.balance + " point.");
+                    System.out.println(player1.getName() + " har vundet med en score på " + player1.balance + " point.");
+                    System.out.println(player2.getName() + " har tabt med en score på " + player2.balance + " point.");
                     System.exit(0);
                 } else if (faceTotal == 10) {
                     System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
@@ -110,9 +115,9 @@ public class FeltSpil {
             } else {
                 activePlayer = player1; // Hvis activePlayer er player2, skift den aktive spiller til at være player1
                 if (player2.balance >= 3000) {
-                    System.out.println(player2.name + " har vundet med en score på " + player2.balance + " point.");
-                    System.out.println(player1.name + " har tabt med en score på " + player1.balance + " point.");
-                    System.exit(1);
+                    System.out.println(player2.getName() + " har vundet med en score på " + player2.balance + " point.");
+                    System.out.println(player1.getName() + " har tabt med en score på " + player1.balance + " point.");
+                    System.exit( 1);
                 } else if (faceTotal == 10) {
                     System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
                     activePlayer = player2;
