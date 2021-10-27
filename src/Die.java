@@ -1,15 +1,14 @@
 /**
  * javas Math klasse bruges til at vælge et tilfældigt tal mellem 1 og _sides
  */
-
 public class Die {
     int MINfaceValue; //starter med værdien 0
     int MAXfaceValue;
     int faceValue;
 
-    public Die(int _MINfaceValue, int _MAXfaceValue){
-        this.MINfaceValue = _MINfaceValue;
-        this.MAXfaceValue = _MAXfaceValue;
+    public Die(int MINfaceValue, int MAXfaceValue){
+        this.MINfaceValue = MINfaceValue;
+        this.MAXfaceValue = MAXfaceValue;
     }
 
     public int roll(){ //funktionen roll ruller en terning med x-antal sider.
