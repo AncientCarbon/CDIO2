@@ -2,7 +2,7 @@ public class Konto {
     private int balance;
 
     public Konto(int balance){
-        this.balance = 1000;
+        this.balance = balance;
     }
 
     public int addScore(int point){ // Laver et ny variabel med typen Felt

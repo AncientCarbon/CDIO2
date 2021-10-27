@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 public class DieTest {
 
     @Test
-    public void equalNumberOfEachFace() {
+    public void equalRollsOfEachFace() {
         int[] diceValues = new int[6];
         Die die = new Die(1, 6);
         for (int i = 0; i < 60000; i++) {
