@@ -1,8 +1,8 @@
 public class Konto {
     private int balance;
 
-    public Konto(){
-        this.balance = 1000;
+    public Konto(int point){
+        this.balance = point;
     }
 
     public int getBalance() {

@@ -4,7 +4,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.konto = new Konto();
+        this.konto = new Konto(1000);
     }
 
     public int addScore(int point){ // Laver et ny variabel med typen Felt
