@@ -22,6 +22,10 @@ public class Player {
         return this.konto.getBalance();
     }
 
+    public void setBalance(int newBalance) {
+        this.konto.setBalance(newBalance);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
