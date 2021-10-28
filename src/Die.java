@@ -2,6 +2,7 @@
  * Terning initieres med Die(int, int) for at parametre for terningen.
  * Der bruges .roll til at vælge et tilfældigt tal mellem disse parametre.
  */
+
 public class Die {
     int MINfaceValue; //starter med værdien 0
     int MAXfaceValue;

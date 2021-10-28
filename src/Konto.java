@@ -3,7 +3,6 @@
  * Spillerklassen skaber automatisk en tilhørende konto-klasse ved skabelse.
  */
 
-
 public class Konto {
     private int balance;
 
