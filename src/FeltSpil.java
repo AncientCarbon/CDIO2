@@ -90,11 +90,11 @@ public class FeltSpil {
                 System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
             } else {
                 Field field = fieldMap.get(faceTotal); // Ny variabel field som har typen Felt tilføjes
-                activePlayer.addScore(field.point);
+                activePlayer.addScore(field.getPoint());
                 // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
                 // vha. metoden addScore som er defineret i Player klassen
-                System.out.println("\n" + field.description);
-                System.out.println("Du har fået " + field.point + " point.");
+                System.out.println("\n" + field.getDescription());
+                System.out.println("Du har fået " + field.getPoint() + " point.");
             }
             System.out.println(activePlayer.getName() + "'s nye score er: " + activePlayer.getBalance());
 
@@ -105,7 +105,7 @@ public class FeltSpil {
                     System.out.println(player2.getName() + " har tabt med en score på " + player2.getBalance() + " point.");
                     System.exit(0);
                 } else if (faceTotal == 10) {
-                    System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
+                    System.out.println("Da du er landet på " + F10.getName() + " får du en ekstra tur!");
                     activePlayer = player1;
                 }
             } else {
@@ -115,7 +115,7 @@ public class FeltSpil {
                     System.out.println(player1.getName() + " har tabt med en score på " + player1.getBalance() + " point.");
                     System.exit( 1);
                 } else if (faceTotal == 10) {
-                    System.out.println("Da du er landet på " + F10.name + " får du en ekstra tur!");
+                    System.out.println("Da du er landet på " + F10.getName() + " får du en ekstra tur!");
                     activePlayer = player2;
                 }
             }
