@@ -1,4 +1,4 @@
-// Version 1.1.1
+// Version 1.1.2
 
 import java.util.*;
 
@@ -79,6 +79,7 @@ public class FeltSpil {
         int faceTotal;
 
         Player activePlayer = player1; // Variablen activePlayer har typen Player. Ligesom et navn har typen String...
+
         while (activePlayer.getBalance() < 3000) {
 
             System.out.print("Tryk 'enter' for at rulle med terningerne: Det er " + activePlayer.getName() + "'s tur");
