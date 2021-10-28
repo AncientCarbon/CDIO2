@@ -4,9 +4,9 @@
  */
 
 public class Die {
-    int MINfaceValue; //starter med værdien 0
-    int MAXfaceValue;
-    int faceValue;
+    private int MINfaceValue; //starter med værdien 0
+    private int MAXfaceValue;
+    private int faceValue;
 
     public Die(int MINfaceValue, int MAXfaceValue){
         this.MINfaceValue = MINfaceValue;
