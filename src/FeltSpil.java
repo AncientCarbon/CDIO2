@@ -34,7 +34,7 @@ public class FeltSpil {
                         "eliksir. Den virker ikke, og han har ikke råd til at fodre sine børn nu.");
         Field F5 = new Field("Cold Dessert", -20,
                 "Du kommer ud i Den Kolde Ørken™. Den er kold™, og du beslutter dig for at" +
-                        " købe en varm drik. Der er ingen butikker\ni Den Kolde Ørken™, så du smider" +
+                        " købe en varm drik. Der er ingen butikker\ni Den Kolde Ørken™, så du smider " +
                         "20 mønter på jorden i frustration");
         Field F6 = new Field("Walled City", 180,
                 "Du planlægger en revolution i Walled City™, og får alle de normale borgere" +
