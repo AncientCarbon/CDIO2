@@ -1,3 +1,6 @@
+/**
+ * Field klassen skaber objekter med seperate informationer omkring et felt.
+ */
 public class Field {
     public int point;
     public String name;
