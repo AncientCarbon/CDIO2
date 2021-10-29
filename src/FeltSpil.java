@@ -54,10 +54,9 @@ public class FeltSpil {
         }
             Player player2 = new Player(in.nextLine());
         HashMap<Integer, Field> fieldMap = new HashMap<>();
-       Field F2 = new Field("pow", 2, "ha");
 
         if (language==1) {
-            F2=F2("Tower", 250,
+            Field F2 = new Field("Tower", 250,
                 "Du betaler 50 mønter for at komme op i runde tårn. Det var kedeligt," +
                           " så du slår en mand, og han giver dig 300 mønter for at stoppe.");
             Field F3 = new Field("Crater", -100,
@@ -95,8 +94,23 @@ public class FeltSpil {
                     "Du beslutter at du ikke gider spille det her spil længere, så du " +
                             "tager hjem. Dog finder du en ny spiller på vejen, og stjæler over " +
                             "halvdelen af hans penge. Nu vil du gerne spille lidt mere.");
+            // Laver et HashMap. HashMap-navnet er fieldMap
+            // HashMap Key skal en int og værdien skal være et felt-objekt som er dannet herover
+            fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2S
+            // Indsætter værdier i Map. Metoden put() indsætter elementer i Map
+            fieldMap.put(3, F3);
+            fieldMap.put(4, F4);
+            fieldMap.put(5, F5);
+            fieldMap.put(6, F6);
+            fieldMap.put(7, F7);
+            fieldMap.put(8, F8);
+            fieldMap.put(9, F9);
+            fieldMap.put(10, F10);
+            fieldMap.put(11, F11);
+            fieldMap.put(12, F12);
+
         }
-        else {
+        else if (language ==2) {
 
                Field F2 = new Field("Tower", 250,
                    "Du betaler 50 mønter for at komme op i runde tårn. Det var kedeligt," +
@@ -136,21 +150,21 @@ public class FeltSpil {
                     "Du beslutter at du ikke gider spille det her spil længere, så du " +
                             "tager hjem. Dog finder du en ny spiller på vejen, og stjæler over " +
                             "halvdelen af hans penge. Nu vil du gerne spille lidt mere.");
+            // Laver et HashMap. HashMap-navnet er fieldMap
+            // HashMap Key skal en int og værdien skal være et felt-objekt som er dannet herover
+            fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2S
+            // Indsætter værdier i Map. Metoden put() indsætter elementer i Map
+            fieldMap.put(3, F3);
+            fieldMap.put(4, F4);
+            fieldMap.put(5, F5);
+            fieldMap.put(6, F6);
+            fieldMap.put(7, F7);
+            fieldMap.put(8, F8);
+            fieldMap.put(9, F9);
+            fieldMap.put(10, F10);
+            fieldMap.put(11, F11);
+            fieldMap.put(12, F12);
         }
-        // Laver et HashMap. HashMap-navnet er fieldMap
-        // HashMap Key skal en int og værdien skal være et felt-objekt som er dannet herover
-        fieldMap.put(2, F2); // Har en key = 2, og en værdi som her peger på objektet F2S
-        // Indsætter værdier i Map. Metoden put() indsætter elementer i Map
-        fieldMap.put(3, F3);
-        fieldMap.put(4, F4);
-        fieldMap.put(5, F5);
-        fieldMap.put(6, F6);
-        fieldMap.put(7, F7);
-        fieldMap.put(8, F8);
-        fieldMap.put(9, F9);
-        fieldMap.put(10, F10);
-        fieldMap.put(11, F11);
-        fieldMap.put(12, F12);
 
         int faceTotal;
 
