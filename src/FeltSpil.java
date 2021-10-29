@@ -1,4 +1,4 @@
-// Version 2.0.0
+// Version 2.0.1
 
 import java.util.*;
 
@@ -23,28 +23,28 @@ public class FeltSpil {
 
         if (language == 1) {
             System.out.println("""
-                    Begge spillere starter med en pengebeholdning på 1000kr.
+                    Begge spillere starter med en pengebeholdning på 1000,-.
                     Slå med terningerne for at lande på et givent felt, med en given værdi,
                     som både kan være positiv eller negativ.
-                    Spilleren der først når en pengebeholdning på 3000kr vinder.
+                    Spilleren der først når en pengebeholdning på 3000,- vinder.
                     """); // Text block (forslået af java)
         } else {
             System.out.println("""
-                    Both players start with a balance of 1000 DKK.
+                    Both players start with a balance of 1000,-.
                     Roll the dice to land on a field with a given value.
                     This value could both be positive and negative.
-                    The first player to reach a balance of 3000 DKK wins.
+                    The first player to reach a balance of 3000,- wins.
                         """); // Text block (forslået af java)
         }
         if (language == 1){
             System.out.print("Player 1 skriv dit navn: ");
-        } else if (language == 2) System.out.print("Player 1 write your name: ");
+        } else System.out.print("Player 1 write your name: ");
 
         Player player1 = new Player(scanner.nextLine());
 
         if (language == 1){
             System.out.print("Player 2 skriv dit navn: ");
-        } else if (language == 2) System.out.print("Player 2 write your name: ");
+        } else System.out.print("Player 2 write your name: ");
         Player player2 = new Player(scanner.nextLine());
 
         Field F2;
