@@ -1,4 +1,4 @@
-// Version 1.1.4
+// Version 2.0.0
 
 import java.util.*;
 
@@ -64,7 +64,7 @@ public class FeltSpil {
                 activePlayer = player1; // Hvis activePlayer er player2, skift den aktive spiller til at være player1
                 if (player2.getBalance() >= 3000) {
                     System.out.printf(languageMap.get("gameResult"), player2.getName(), player2.getBalance(), player1.getName(), player1.getBalance());
-                    System.exit( 1);
+                    System.exit( 0);
                 } else if (faceTotal == 10) {
                     System.out.printf(languageMap.get("SpecialF10") + "\n", fieldMap.get(10).getName());
                     activePlayer = player2;
