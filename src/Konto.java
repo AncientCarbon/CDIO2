@@ -3,12 +3,11 @@
  * Spillerklassen skaber automatisk en tilhørende konto-klasse ved skabelse.
  */
 
-
 public class Konto {
     private int balance;
 
-    public Konto(int point){
-        this.balance = point;
+    public Konto(int balance){
+        this.balance = balance;
     }
 
     public int getBalance() {
