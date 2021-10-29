@@ -22,7 +22,15 @@ public class FeltSpil {
         System.out.print("Player 2 skriv dit navn: ");
         Player player2 = new Player(in.nextLine());
 
-        HashMap<Integer, Field> fieldMap = FieldFactory.createFieldMap();
+        System.out.println("For dansk skriv da.\nFor engelsk skriv en.");
+        String languageChoice = in.nextLine();
+        while (!languageChoice.equals("da") && !languageChoice.equals("en")) {
+            System.out.println("Dette input eksisterer ikke. Venligst vælg da (dansk) eller en (engelsk)");
+            languageChoice = in.nextLine();
+        }
+        FieldFactory.SupportedLanguage language = languageChoice.equals("da")
+                ? FieldFactory.SupportedLanguage.Danish : FieldFactory.SupportedLanguage.English;
+        HashMap<Integer, Field> fieldMap = FieldFactory.createFieldMap(language);
 
         int faceTotal;
 
