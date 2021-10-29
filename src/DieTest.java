@@ -9,7 +9,9 @@ public class DieTest {
         int[] faceValues = new int[6];
         Die die = new Die(1, 6);
         for (int i = 0; i < 60000; i++) {
-            int index = die.roll() - 1; // faceValue 1 == index 0 etc.
+            int index = die.roll() - 1;
+            // Svarer til faceValue.length -1 == maximum index of an array
+            // faceValue 1 == index 0 etc.
             faceValues[index]++; // Lægger 1 til det givne index
         }
 
