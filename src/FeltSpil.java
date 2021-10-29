@@ -10,6 +10,18 @@ public class FeltSpil {
         Die terning1 = new Die(1, 6);
         Die terning2 = new Die(1, 6);
 
+        System.out.println("Choose ur language!");
+        System.out.println("Skriv '1' for dansk");
+        System.out.println("Type '2' for English");
+
+        int language = in.nextInt();
+        if (language != 1||2){
+            System.out.println("stop trolling lol");
+            System.exit(2);
+        }
+
+
+
         System.out.println("""
                 Begge spillere starter med en pengebeholdning på 1000kr.
                 Slå med terningerne for at lande på et givent felt, med en given værdi,
