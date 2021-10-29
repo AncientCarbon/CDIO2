@@ -10,27 +10,24 @@ public class FeltSpil {
         Die terning1 = new Die(1, 6);
         Die terning2 = new Die(1, 6);
 
-        System.out.println("""
-                Begge spillere starter med en pengebeholdning på 1000kr.
-                Slå med terningerne for at lande på et givent felt, med en given værdi,
-                som både kan være positiv eller negativ.
-                Spilleren der først når en pengebeholdning på 3000kr vinder.
-                """); // Text block (forslået af java)
-
-        System.out.print("Player 1 skriv dit navn: ");
-        Player player1 = new Player(in.nextLine());
-        System.out.print("Player 2 skriv dit navn: ");
-        Player player2 = new Player(in.nextLine());
-
-        System.out.println("For dansk skriv da.\nFor engelsk skriv en.");
+        System.out.println("For dansk skriv da.\nFor english type en.");
         String languageChoice = in.nextLine();
         while (!languageChoice.equals("da") && !languageChoice.equals("en")) {
             System.out.println("Dette input eksisterer ikke. Venligst vælg da (dansk) eller en (engelsk)");
             languageChoice = in.nextLine();
         }
-        FieldFactory.SupportedLanguage language = languageChoice.equals("da")
-                ? FieldFactory.SupportedLanguage.Danish : FieldFactory.SupportedLanguage.English;
-        HashMap<Integer, Field> fieldMap = FieldFactory.createFieldMap(language);
+        SupportedLanguage language = languageChoice.equals("da")
+                ? SupportedLanguage.Danish : SupportedLanguage.English;
+
+        HashMap<String, String> languageMap = LanguageFactory.createLanguageMap(language);
+        HashMap<Integer, Field> fieldMap = FieldFactory.createFieldMap(languageMap);
+
+        System.out.println(languageMap.get("Rules")); // Text block (forslået af java)
+
+        System.out.printf(languageMap.get("inputPlayerName"), 1);
+        Player player1 = new Player(in.nextLine());
+        System.out.printf(languageMap.get("inputPlayerName"), 2);
+        Player player2 = new Player(in.nextLine());
 
         int faceTotal;
 
@@ -38,41 +35,38 @@ public class FeltSpil {
 
         while (activePlayer.getBalance() < 3000) {
 
-            System.out.print("Tryk 'enter' for at rulle med terningerne: Det er " + activePlayer.getName() + "'s tur");
+            System.out.printf(languageMap.get("rollDice"), activePlayer.getName());
             new Scanner(System.in).nextLine();
 
             faceTotal = terning1.roll() + terning2.roll();
 
             if (faceTotal < 2 || faceTotal > 12) {
-                System.out.println("Der findes kun felter 2-12. Du har slået " + faceTotal);
+                System.out.printf((languageMap.get("errorNoField")) + "\n", faceTotal);
             } else {
                 Field field = fieldMap.get(faceTotal); // Ny variabel field som har typen Felt tilføjes
                 activePlayer.addScore(field.getPoint());
                 // Tilføjer et givent felt's point til den aktive spilleres pengebeholdning
                 // vha. metoden addScore som er defineret i Player klassen
-                System.out.println("\n" + field.getDescription());
-                System.out.println("Du har fået " + field.getPoint() + " point.");
+                System.out.printf(languageMap.get("fieldLandedOn") + "\n", field.getDescription(), field.getName(), field.getPoint());
             }
-            System.out.println(activePlayer.getName() + "'s nye score er: " + activePlayer.getBalance());
+            System.out.printf(languageMap.get("newScore") + "\n", activePlayer.getName(), activePlayer.getBalance());
 
             if (activePlayer == player1) {
                 activePlayer = player2; // Hvis activePlayer er player1, skift den aktive spiller til at være player2
                 if (player1.getBalance() >= 3000) {
-                    System.out.println(player1.getName() + " har vundet med en score på " + player1.getBalance() + " point.");
-                    System.out.println(player2.getName() + " har tabt med en score på " + player2.getBalance() + " point.");
+                    System.out.printf(languageMap.get("gameResult") + "\n", player1.getName(), player1.getBalance(), player2.getName(), player2.getBalance());
                     System.exit(0);
                 } else if (faceTotal == 10) {
-                    System.out.println("Da du er landet på " + fieldMap.get(10).getName() + " får du en ekstra tur!");
+                    System.out.printf(languageMap.get("SpecialF10") + "\n", fieldMap.get(10).getName());
                     activePlayer = player1;
                 }
             } else {
                 activePlayer = player1; // Hvis activePlayer er player2, skift den aktive spiller til at være player1
                 if (player2.getBalance() >= 3000) {
-                    System.out.println(player2.getName() + " har vundet med en score på " + player2.getBalance() + " point.");
-                    System.out.println(player1.getName() + " har tabt med en score på " + player1.getBalance() + " point.");
+                    System.out.printf(languageMap.get("gameResult"), player2.getName(), player2.getBalance(), player1.getName(), player1.getBalance());
                     System.exit( 1);
                 } else if (faceTotal == 10) {
-                    System.out.println("Da du er landet på " + fieldMap.get(10).getName() + " får du en ekstra tur!");
+                    System.out.printf(languageMap.get("SpecialF10") + "\n", fieldMap.get(10).getName());
                     activePlayer = player2;
                 }
             }
