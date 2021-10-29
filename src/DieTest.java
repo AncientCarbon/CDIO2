@@ -14,8 +14,8 @@ public class DieTest {
         }
 
         for (int i = 0; i < 6; i++) {
-            boolean rollRange = faceValues[i] < 9600 || faceValues[i] > 10400; // TotalFaceValue. Cirka 10000 per faceValue
-            assertFalse(rollRange); // Falsk hvis ovenstående påstand er falsk, ellers sand
+            boolean rollRange = faceValues[i] < 9600 || faceValues[i] > 10400; // forventet værdi 10000 +-400
+            assertFalse(rollRange); // test fejler hvis rollRange = True
         }
     }
 
