@@ -1,19 +1,21 @@
 import org.junit.Test;
+
 import static org.junit.Assert.assertFalse;
 
 public class DieTest {
 
     @Test
     public void equalRollsOfEachFace() {
-        int[] diceValues = new int[6];
+        int[] faceValues = new int[6];
         Die die = new Die(1, 6);
         for (int i = 0; i < 60000; i++) {
-            int faceValue = die.roll() - 1;
-            diceValues[faceValue]++;
+            int index = die.roll() - 1; // faceValue 1 == index 0 etc.
+            faceValues[index]++; // Lægger 1 til det givne index
         }
+
         for (int i = 0; i < 6; i++) {
-            boolean rollRange = diceValues[i] < 9600 || diceValues[i] > 10400;
-            assertFalse(rollRange);
+            boolean rollRange = faceValues[i] < 9600 || faceValues[i] > 10400; // TotalFaceValue. Cirka 10000 per faceValue
+            assertFalse(rollRange); // Falsk hvis ovenstående påstand er falsk, ellers sand
         }
     }
 
@@ -32,8 +34,8 @@ public class DieTest {
         Die die = new Die(1, 10);
         int[] range = new int[10];
         for (int i = 0; i < 100000; i++) {
-            int face = die.roll() - 1;
-            range[face]++;
+            int index = die.roll() - 1;
+            range[index]++;
         }
         for (int i = 0; i < 10; i++) {
             boolean rollRange = range[i] < 9500 || range[i] > 10500;
