@@ -17,7 +17,7 @@ public class FeltSpil {
             languageChoice = in.nextLine();
         }
         SupportedLanguage language = languageChoice.equals("da")
-                ? SupportedLanguage.Danish : SupportedLanguage.English;
+                ? SupportedLanguage.DANISH : SupportedLanguage.ENGLISH; // Accesses enum constants with the dot syntax
 
         HashMap<String, String> languageMap = LanguageFactory.createLanguageMap(language);
         HashMap<Integer, Field> fieldMap = FieldFactory.createFieldMap(languageMap);

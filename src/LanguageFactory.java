@@ -5,7 +5,7 @@ public class LanguageFactory {
         HashMap<String, String> languageMap = new HashMap<>();
 
         switch (language) {
-            case Danish -> {
+            case DANISH -> {
                 // Fields
                 languageMap.put("Tower",
                         """
@@ -69,7 +69,7 @@ public class LanguageFactory {
                 languageMap.put("gameResult", "%s har vundet med en score på %d point.\n%s har tabt med en score på %d point");
                 languageMap.put("SpecialF10", "Da du er landet på %s får du en ekstra tur!");
             }
-            case English -> {
+            case ENGLISH -> {
                 // Fields
                 languageMap.put("Tower",
                         """
